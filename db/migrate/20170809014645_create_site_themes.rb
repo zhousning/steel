@@ -5,7 +5,7 @@ class CreateSiteThemes < ActiveRecord::Migration
       t.string :main_image, null: false, default: ""
       t.string :preview_link, null: false, default: ""
       t.string :source_link, null: false, default: ""
-      t.text :tag, null: false
+      t.text :tag, null: false, default: ""
 
       t.timestamps null: false
     end

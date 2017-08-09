@@ -13,25 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20170809041448) do
 
+  create_table "project_tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_tags_site_themes", id: false, force: :cascade do |t|
+    t.integer "project_tag_id", null: false
+    t.integer "site_theme_id",  null: false
+  end
+
   create_table "site_themes", force: :cascade do |t|
     t.string   "title",                     null: false
     t.string   "main_image",   default: "", null: false
     t.string   "preview_link", default: "", null: false
     t.string   "source_link",  default: "", null: false
-    t.text     "tag",                       null: false
+    t.text     "tag",          default: "", null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-  end
-
-  create_table "site_themes_tags", id: false, force: :cascade do |t|
-    t.integer "tag_id",        null: false
-    t.integer "site_theme_id", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
