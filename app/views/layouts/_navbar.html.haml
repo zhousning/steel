@@ -9,16 +9,15 @@
         = link_to Setting.home.develop_tool, root_path
     %ul.nav.navbar-nav.navbar-right
       - unless user_signed_in?
+        -#
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-question-sign
+              HELP
         %li
-          %a{:href => "#"}
-            %span.glyphicon.glyphicon-question-sign
-            HELP
+          = link_to "注册", new_user_registration_path
         %li
-          = link_to new_user_registration_path do
-            %span.glyphicon.glyphicon-user
-              注册
-        %li
-          = link_to "登录", new_user_session_path
+          = link_to "登录", new_user_session_path, :class => "color-blue"
       - else
         %li
           = link_to current_user.email, nil

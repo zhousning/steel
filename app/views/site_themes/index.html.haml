@@ -10,5 +10,5 @@
             %p.theme-index-item-title
               = theme.title
   .row 
-    .col-md-12
-      = paginate @site_themes
+    .col-md-12.site-theme-paginate-wrapper
+      = paginate @site_themes, window: 2, left: 1, right: 1 
