@@ -59,7 +59,7 @@ gem 'devise'
 
 gem 'annotate'
 
-#gem 'settingslogic'
+gem 'settingslogic'
 
 #gem 'rails_kindeditor', :git=>'git@bitbucket.org:jilinbeauty/thesis_kindeditor.git'
 
@@ -85,7 +85,7 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 
 #gem 'lazy_high_charts'
 
-#gem 'kaminari'
+gem 'kaminari'
 
 gem 'cocoon'
 

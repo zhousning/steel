@@ -1,0 +1,16 @@
+- provide(:title, "#{@site_theme.title}-主题详情")
+
+.container
+  .row
+    .col-md-2
+      .theme-show-item-wrapper
+        = image_tag @site_theme.main_image, :class => "img-thumbnail"
+    .col-md-2
+      %h1
+        = @site_theme.title
+      %p
+        - @site_theme.tag.each do |tag|
+          = tag
+      = link_to "预览", @site_theme.preview_link, :class => "btn btn-info", :target => "_blank"
+      = link_to "下载", @site_theme.source_link, :class => "btn btn-primary"
+

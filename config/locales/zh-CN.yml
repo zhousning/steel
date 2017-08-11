@@ -1,11 +1,11 @@
 zh-CN:
   layouts:
     application:
-      site_title: "玛瑙"
+      site_title: "森罗万象"
 
   home:
     index:
-      title: "玛瑙 - rails项目模板"
+      title: "森罗万象"
     about:
       title: "公司简介"
     intro:
@@ -14,3 +14,8 @@ zh-CN:
       title: "诚聘英才"
     contact:
       title: "联系我们"
+  site_themes:
+    index:
+      title: "网站主题"
+    show:
+      title: "主题详情"

@@ -1,0 +1,14 @@
+- provide(:title, t('.title'))
+
+.container
+  .row
+    - @site_themes.each do|theme|
+      .col-md-4.theme-index-item-wrapper
+        = link_to site_theme_path(theme) do
+          .theme-index-item
+            = image_tag theme.main_image, :class => "img-thumbnail theme-index-item-img"
+            %p.theme-index-item-title
+              = theme.title
+  .row 
+    .col-md-12
+      = paginate @site_themes

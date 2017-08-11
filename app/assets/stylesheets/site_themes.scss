@@ -1,0 +1,30 @@
+// Place all the styles related to the site_themes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.site_themes.index {
+  background: #f5f5f5; 
+}
+.theme-index-item-wrapper {
+  padding-bottom: 25px;
+}
+.theme-index-item {
+  background: white;
+}
+.theme-index-item:hover {
+  -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+}
+.theme-index-item-img {
+  padding: 0px;
+  border: 0px;
+  border-radius: 0px;
+  height: 300px;
+}
+.theme-index-item-title {
+  font-size: 18px;
+  padding: 25px 0px;
+  text-align:center;
+  color: #333;
+}

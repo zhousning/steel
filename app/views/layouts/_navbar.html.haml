@@ -1,14 +1,12 @@
-%nav.navbar.navbar-inverse
-  .container-fluid
+%nav.navbar.home-navbar-wrapper
+  .container
     .navbar-header
-      %a.navbar-brand{:href => "#"} Agate
+      = link_to Setting.home.site_title, root_path, :class => "navbar-brand"
     %ul.nav.navbar-nav
       %li
-        %a{:href => "#"} 公司简介 
+        = link_to Setting.home.site_theme, site_themes_path
       %li
-        %a{:href => "#"} 了解产品
-      %li
-        %a{:href => "#"} 诚聘英才
+        = link_to Setting.home.develop_tool, root_path
     %ul.nav.navbar-nav.navbar-right
       - unless user_signed_in?
         %li

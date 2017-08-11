@@ -21,3 +21,9 @@
 
 # Ignore test yaml
 /lib/tasks/site_themesbck.yml
+
+
+public/PreviewFiles/
+public/SourceFiles/
+
+.rake_tasks~
