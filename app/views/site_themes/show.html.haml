@@ -1,16 +1,23 @@
 - provide(:title, "#{@site_theme.title}-主题详情")
 
-.container
+.container-fluid
   .row
     .col-md-2
       .theme-show-item-wrapper
-        = image_tag @site_theme.main_image, :class => "img-thumbnail"
-    .col-md-2
-      %h1
+        = image_tag @site_theme.main_image, :class => "img-thumbnail theme-show-item-img"
+    .col-md-4
+      %h4.theme-show-title
         = @site_theme.title
-      %p
+      .theme-tag-container
         - @site_theme.tag.each do |tag|
-          = tag
-      = link_to "预览", @site_theme.preview_link, :class => "btn btn-info", :target => "_blank"
-      = link_to "下载", @site_theme.source_link, :class => "btn btn-primary"
-
+          %span.theme-tag-box
+            = tag
+      -#
+        = link_to "预览", @site_theme.preview_link, :class => "btn btn-info", :target => "_blank"
+      .row
+        .col-md-3
+          = link_to "下载", @site_theme.source_link, :class => "btn btn-success btn-lg btn-block"
+.container-fluid
+  .row
+    .site-theme-preview-container
+      %iframe{:src => @site_theme.preview_link, :width => "100%", :height => "450px"}

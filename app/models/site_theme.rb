@@ -18,4 +18,10 @@ class SiteTheme < ActiveRecord::Base
   serialize :tag, Array
 
   validates :title,     :presence => true
+
+  def set_tags(tags)
+    unless tags.empty?
+      self.project_tags = ProjectTag.find(tags) 
+    end
+  end
 end

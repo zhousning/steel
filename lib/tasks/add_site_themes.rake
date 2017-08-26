@@ -5,7 +5,7 @@ require 'yaml'
 namespace :db do
   desc "add site theme to mysql"
   task :add_site_themes => :environment do
-    site_themes = YAML.load_file("lib/tasks/site_themesbck.yml")
+    site_themes = YAML.load_file("lib/tasks/site_themes_test.yml")
     site_themes.each do |theme|
      @site_themes = SiteTheme.create!(
        :title => theme[0], 

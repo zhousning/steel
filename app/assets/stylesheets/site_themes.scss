@@ -1,7 +1,7 @@
 // Place all the styles related to the site_themes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.site_themes.index {
+.site_themes.index, .site_themes.show {
   background: #f5f5f5; 
 }
 .theme-index-item-wrapper {
@@ -48,4 +48,32 @@
   line-height: 68px;
   background: #dc0000;
   color: #fff;
+}
+.site-theme-preview-container {
+  margin-top: 20px;
+}
+.theme-show-item-wrapper {
+  background: white;
+  padding: 10px;
+}
+.theme-show-item-img {
+  border: 0px;
+  border-radius: 0px;
+}
+.theme-show-title {
+  margin-top: 20px;
+}
+.theme-tag-container {
+  margin-bottom: 25px;
+}
+.theme-tag-box {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #337ab7;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #337ab7;
+  border-radius: 6px;
+  margin-right: 3px;
+  margin-bottom: 10px;
 }
