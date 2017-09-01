@@ -7,6 +7,8 @@ class CreateSiteThemes < ActiveRecord::Migration
       t.string :source_link, null: false, default: ""
       t.text :tag, null: false, default: ""
 
+      t.references :category
+
       t.timestamps null: false
     end
   end

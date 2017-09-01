@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809041448) do
+ActiveRecord::Schema.define(version: 20170827114931) do
 
-  create_table "project_tags", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "project_tags_site_themes", id: false, force: :cascade do |t|
-    t.integer "project_tag_id", null: false
-    t.integer "site_theme_id",  null: false
+  create_table "project_tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "site_themes", force: :cascade do |t|
@@ -30,8 +31,16 @@ ActiveRecord::Schema.define(version: 20170809041448) do
     t.string   "preview_link", default: "", null: false
     t.string   "source_link",  default: "", null: false
     t.text     "tag",          default: "", null: false
+    t.integer  "category_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "theme_tagships", force: :cascade do |t|
+    t.integer  "project_tag_id"
+    t.integer  "site_theme_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

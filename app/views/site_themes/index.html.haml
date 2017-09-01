@@ -1,5 +1,7 @@
 - provide(:title, t('.title'))
 
+= render "layouts/filter"
+
 .container
   .row
     - @site_themes.each do|theme|
