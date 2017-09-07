@@ -9,5 +9,5 @@
 #
 
 class Category < ActiveRecord::Base
-  has_many :project_tags
+  has_many :theme_tags
 end

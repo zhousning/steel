@@ -23,8 +23,12 @@ function getSiteThemes(target) {
 
 function addFilterActive() {
   var tags = gon.tags;
-  for (var i=0; i<tags.length; i++) {
-    var targetNode = $($("#filter-cond-ctn li")[i]).find("a[value='"+tags[i]+"']");
-    $(targetNode).addClass("filter-item-active");
+  if (tags.length == 0) {
+    $("#filter-cond-ctn li").find("a[value='all']").addClass("filter-item-active");
+  } else {
+    for (var i=0; i<tags.length; i++) {
+      var targetNode = $($("#filter-cond-ctn li")[i]).find("a[value='"+tags[i]+"']");
+      $(targetNode).addClass("filter-item-active");
+    }
   }
 }

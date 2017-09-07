@@ -1,0 +1,11 @@
+.search-blank-wrapper
+  .container.search-blank-ctn
+    .row
+      .col-md-10.col-md-offset-1.search-element
+        = form_tag search_site_themes_path, :method => "get", :class => "form-horizontal" do 
+          .input-group
+            = text_field_tag 'tags', '', :class => "form-control search-blank-text"
+            %span.input-group-btn
+              %button.btn.btn-primary.search-blank-submit
+                %span.glyphicon.glyphicon-search
+                搜主题

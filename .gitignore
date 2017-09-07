@@ -26,4 +26,6 @@
 public/PreviewFiles/
 public/SourceFiles/
 
+app/assets/images/CssTemplateImages/test/
+
 .rake_tasks~

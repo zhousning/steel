@@ -15,7 +15,7 @@
 
 class SiteTheme < ActiveRecord::Base
   has_many :theme_tagships
-  has_many :project_tags, :through => :theme_tagships
+  has_many :theme_tags, :through => :theme_tagships
 
   serialize :tag, Array
 
@@ -23,7 +23,7 @@ class SiteTheme < ActiveRecord::Base
 
   def set_tags(tags)
     unless tags.empty?
-      self.project_tags = ProjectTag.find(tags) 
+      self.theme_tags = ThemeTag.find(tags) 
     end
   end
 end

@@ -7,10 +7,13 @@ Rails.application.routes.draw do
     # get 'login_validate', to: 'users/sessions#login_validate'
   end
 
-  # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :site_themes
+  resources :site_themes, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -99,3 +99,5 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 #gem 'rack-cors', :require => 'rack/cors'
 
 #gem 'yaml_db'
+
+gem 'searchkick'

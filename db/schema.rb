@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 20170827114931) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "project_tags", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "site_themes", force: :cascade do |t|
     t.string   "title",                     null: false
     t.string   "main_image",   default: "", null: false
@@ -36,11 +30,18 @@ ActiveRecord::Schema.define(version: 20170827114931) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "theme_tags", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "theme_tagships", force: :cascade do |t|
-    t.integer  "project_tag_id"
+    t.integer  "theme_tag_id"
     t.integer  "site_theme_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
