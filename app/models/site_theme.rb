@@ -14,6 +14,8 @@
 #
 
 class SiteTheme < ActiveRecord::Base
+  searchkick
+
   has_many :theme_tagships
   has_many :theme_tags, :through => :theme_tagships
 

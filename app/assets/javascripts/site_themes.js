@@ -1,5 +1,6 @@
-$(".site_themes.index").ready(function() {
+$(".site_themes.index .site_themes.filter .site_themes.search").ready(function() {
   addFilterActive();
+  addSearchParam();
   $(".filter-cond-item").click(function(e) {
     getSiteThemes(e.target);
   });
@@ -17,8 +18,8 @@ function getSiteThemes(target) {
       conds.push($(active).attr("value"));
     }
   });
-  url = "search=" + conds;
-  window.location.search = url; 
+  url = "/site_themes/filter?tags=" + conds;
+  window.location = url;
 }
 
 function addFilterActive() {
@@ -31,4 +32,8 @@ function addFilterActive() {
       $(targetNode).addClass("filter-item-active");
     }
   }
+}
+
+function addSearchParam() {
+  $(".search-blank-text").val(gon.search);
 }

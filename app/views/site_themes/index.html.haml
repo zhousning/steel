@@ -1,18 +1,4 @@
 - provide(:title, t('.title'))
 
-= render "layouts/search_blank"
--#
-  = render "layouts/filter"
+= render "site_themes/themes"
 
-.container
-  .row
-    - @site_themes.each do|theme|
-      .col-md-4.theme-index-item-wrapper
-        = link_to site_theme_path(theme) do
-          .theme-index-item
-            = image_tag theme.main_image, :class => "img-thumbnail theme-index-item-img"
-            %p.theme-index-item-title
-              = theme.title
-  .row 
-    .col-md-12.site-theme-paginate-wrapper
-      = paginate @site_themes, window: 2, left: 1, right: 1 

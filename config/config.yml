@@ -4,6 +4,8 @@ defaults: &defaults
     site_title: "森罗万象"
     site_theme: "网站主题"
     develop_tool: "开发工具"
+  site_themes:
+    max_page: 15
 
 development:
   <<: *defaults

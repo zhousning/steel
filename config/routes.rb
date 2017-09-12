@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :site_themes, only: [:index, :show] do
     collection do
+      get 'filter'
       get 'search'
     end
   end
