@@ -1,0 +1,18 @@
+- provide(:title, t('.title'))
+
+.container#software-show
+  .row
+    .col-md-8
+      %h2
+        = @software.name
+    .col-md-1.col-md-offset-2
+      = link_to "下载", @software.file_url, :class => "btn btn-success margin-top-20"
+  .row
+    .col-md-8
+      %blockquote
+        %p
+          = @software.description
+  .row
+    %hr
+    .col-md-12
+      = @software.install.html_safe

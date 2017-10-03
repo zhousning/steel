@@ -18,6 +18,13 @@ zh-CN:
             other: "显示 <b>全部 %{count}</b> 个 %{entry_name}"
         more_pages:
           display_entries: "显示 <b>%{total}</b> 个 %{entry_name} 中的第 <b>%{first}&nbsp;-&nbsp;%{last}</b> 个"
+  users:
+    registrations:
+      new:
+        title: "用户注册"
+    sessions:
+      new:
+        title: "用户登录"
   home:
     index:
       title: "森罗万象"
@@ -34,3 +41,17 @@ zh-CN:
       title: "网站主题"
     show:
       title: "主题详情"
+  softwares:
+    index:
+      title: "开发工具"
+    show:
+      title: "开发工具下载"
+    new:
+      title: "添加开发工具"
+    edit:
+      title: "编辑开发工具"
+    list:
+      title: "开发工具列表"
+  manages:
+    index:
+      title: "管理面板"

@@ -1,0 +1,81 @@
+#software-index
+{
+  margin: 20px auto;
+  min-height: 900px;
+}
+.btn-dark-brd {
+  position: relative;
+  display: inline-block;
+  line-height: 1.4;
+  color: #34343c;
+  text-align: center;
+  background: transparent;
+  background-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #34343c;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-dark-brd:hover {
+  transition-duration: 200ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+.btn-dark-brd:hover {
+  color: #fff;
+  background: #34343c;
+  border-color: #34343c;
+  text-decoration: none;
+}
+.btn-dark-brd:after, .btn-dark-brd:before {
+  background: transparent;
+}
+.btn-base-sm {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 9px 22px;
+}
+#software-index {
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    border-left: 10px solid #fec500;
+    padding-left: 10px;
+    margin-bottom: 30px;
+  }
+  .card {
+    text-align: center;
+    background: #fff;
+    box-shadow: 15px 15px 15px 0 #eff1f8;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  .software-title {
+    font-size: 36px;
+    padding: 30px 20px 40px;
+    margin: 10px 30px;
+    border-bottom: 1px solid #e4e8f3;
+  }
+  .software-download {
+    margin-top: 35px;
+    margin-bottom: 10px;
+  }
+}
+#software-show {
+  background: white;
+  border: 1px solid;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  min-height: 950px;
+  padding: 20px 40px;
+}
+#software-show {
+  hr {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+}

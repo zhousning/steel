@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827114931) do
+ActiveRecord::Schema.define(version: 20170912090442) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20170827114931) do
     t.integer  "category_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "softwares", force: :cascade do |t|
+    t.string   "name",        default: "", null: false
+    t.string   "file",        default: "", null: false
+    t.string   "description", default: "", null: false
+    t.text     "install",     default: "", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "theme_tags", force: :cascade do |t|
@@ -55,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170827114931) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "role",                   default: 0,  null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

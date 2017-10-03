@@ -62,6 +62,7 @@ gem 'annotate'
 gem 'settingslogic'
 
 #gem 'rails_kindeditor', :git=>'git@bitbucket.org:jilinbeauty/thesis_kindeditor.git'
+gem 'rails_kindeditor'
 
 #gem 'sidekiq'
 #gem 'sinatra', :require => nil

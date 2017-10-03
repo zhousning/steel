@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
+//= require jquery-readyselector
 //= require bootstrap-sprockets
 //= require_tree .

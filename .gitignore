@@ -25,7 +25,9 @@
 
 public/PreviewFiles/
 public/SourceFiles/
+public/softwares/
 
 app/assets/images/CssTemplateImages/test/
+app/assets/images/watermark.jpg
 
 .rake_tasks~

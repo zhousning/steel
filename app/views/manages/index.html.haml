@@ -1,0 +1,11 @@
+- provide(:title, t('.title'))
+
+.container#manage-index
+  %h1
+    开发工具管理
+  .row
+    %ul.list-group
+      %li
+        = link_to '添加工具', new_software_path, :class => "list-group-item"
+      %li
+        = link_to '工具', list_softwares_path, :class => "list-group-item"

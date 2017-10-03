@@ -1,0 +1,21 @@
+= form_for @software, :html => {:class => "form-horizontal"} do |f|
+  = form_error_messages!(@software)
+  .form-group
+    = f.label "标题", :class => "col-md-1 control-label"
+    .col-md-11
+      = f.text_field :name, :class => "form-control"
+  .form-group
+    = f.label "描述", :class => "col-md-1 control-label"
+    .col-md-11
+      = f.text_field :description, :class => "form-control"
+  .form-group
+    = f.label "软件", :class => "col-md-1 control-label"
+    .col-md-11
+      = f.file_field :file, :class => "form-control"
+  .form-group
+    = f.label "安装教程", :class => "col-md-1 control-label"
+    .col-md-11
+      = f.text_area :install, :id => "software-install", :class => "form-control"
+  .form-group
+    .col-md-11.col-md-offset-1
+      = f.submit "提交", :class => "btn btn-primary"

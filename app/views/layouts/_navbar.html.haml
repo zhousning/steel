@@ -6,7 +6,10 @@
       %li
         = link_to Setting.home.site_theme, site_themes_path
       %li
-        = link_to Setting.home.develop_tool, root_path
+        = link_to Setting.home.develop_tool, softwares_path
+      - if user_signed_in? && current_user.role == Setting.users.role_admin
+        %li
+          = link_to "管理", manages_path
     %ul.nav.navbar-nav.navbar-right
       - unless user_signed_in?
         -#

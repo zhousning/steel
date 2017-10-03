@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # get 'login_validate', to: 'users/sessions#login_validate'
   end
 
-  root 'home#index'
+  root 'site_themes#index'
 
   resources :site_themes, only: [:index, :show] do
     collection do
@@ -16,6 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :softwares do
+    collection do
+      get 'list'
+    end
+  end
+
+  resources :manages, only: [:index]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,4 +1,4 @@
-$(".site_themes.index .site_themes.filter .site_themes.search").ready(function() {
+$(".site_themes.index, .site_themes.filter, .site_themes.search").ready(function(e){
   addFilterActive();
   addSearchParam();
   $(".filter-cond-item").click(function(e) {
