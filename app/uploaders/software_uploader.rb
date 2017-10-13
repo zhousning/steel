@@ -66,12 +66,12 @@ class SoftwareUploader < CarrierWave::Uploader::Base
     end
   end
 
-  def filename
-    if original_filename 
-      @name ||= Digest::MD5.hexdigest(File.dirname(current_path)).slice(0, 12)
-      "#{@name}.#{file.extension}"
-    end
-  end
+  #def filename
+  #  if original_filename 
+  #    @name ||= Digest::MD5.hexdigest(File.dirname(current_path)).slice(0, 12)
+  #    "#{@name}.#{file.extension}"
+  #  end
+  #end
 
   #before :cache, :save_original_filename
   #def save_original_filename(file)

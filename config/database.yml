@@ -4,6 +4,16 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+mysql-setting: &mysql-setting
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: steel
+  pool: 10
+  username: debian-sys-maint
+  password: "snFTofaPq2aGva4p"
+  host: localhost
+
 default: &default
   adapter: sqlite3
   pool: 5
@@ -21,5 +31,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  #<<: *default
+  #database: db/production.sqlite3
+  <<: *mysql-setting
