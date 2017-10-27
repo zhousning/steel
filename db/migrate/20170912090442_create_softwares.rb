@@ -4,7 +4,7 @@ class CreateSoftwares < ActiveRecord::Migration
       t.string :name, null: false, default: ""
       t.string :file, null: false, default: ""
       t.string :description, null: false, default: ""
-      t.text :install, null: false, default: ""
+      t.text :install
 
       t.timestamps null: false
     end
