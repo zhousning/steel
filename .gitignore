@@ -16,11 +16,7 @@
 !/log/.keep
 /tmp
 
-# Ignore test yaml
-/lib/tasks/site_themesbck.yml
-app/assets/images/CssTemplateImages/test/
-
-
+#Ignore software and csstheme folder
 public/softwares/
 public/cssthemes/
 
