@@ -16,16 +16,18 @@
 !/log/.keep
 /tmp
 
-# Ignore public
-/public/assets
-
 # Ignore test yaml
 /lib/tasks/site_themesbck.yml
+app/assets/images/CssTemplateImages/test/
 
 
 public/softwares/
 public/cssthemes/
 
-app/assets/images/CssTemplateImages/test/
+# Ignore server config
+config/database.yml
+config/initializers/devise.rb
+config/secrets.yml
+
 
 .rake_tasks~
