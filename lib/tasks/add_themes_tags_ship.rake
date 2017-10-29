@@ -11,7 +11,7 @@ namespace :db do
       result = []  
       tags.each do |tag|
         prj_tag = ThemeTag.where(:name => tag)
-        result << prj_tag
+        result << prj_tag unless prj_tag.blank?
       end
       t.set_tags(result)
     end
