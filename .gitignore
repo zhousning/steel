@@ -23,11 +23,9 @@
 /lib/tasks/site_themesbck.yml
 
 
-public/PreviewFiles/
-public/SourceFiles/
 public/softwares/
+public/cssthemes/
 
 app/assets/images/CssTemplateImages/test/
-app/assets/images/watermark.jpg
 
 .rake_tasks~
