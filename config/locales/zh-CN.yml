@@ -1,7 +1,7 @@
 zh-CN:
   layouts:
     application:
-      site_title: "森罗万象"
+      site_title: "八方街"
   views:
     pagination:
       first: "首页"
@@ -27,7 +27,7 @@ zh-CN:
         title: "用户登录"
   home:
     index:
-      title: "森罗万象"
+      title: "八方街"
     about:
       title: "公司简介"
     intro:

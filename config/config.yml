@@ -4,9 +4,11 @@ defaults: &defaults
     role_none: 0
     role_admin: 1
   home:
-    site_title: "森罗万象"
-    site_theme: "网站主题"
-    develop_tool: "开发工具"
+    site_title: "八方街"
+    site_theme: "主题街"
+    develop_tool: "软件街"
+    study: "问答街"
+    outsource: "开发街" 
   site_themes:
     max_page: 15
 

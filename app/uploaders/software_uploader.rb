@@ -14,7 +14,7 @@ class SoftwareUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     #不需要rsync同步，所以不放在uploads下面
-    "softwares/#{model.id}"
+    "softwares"
     #"uploads/theses/#{model.thesis.id}"
     #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -46,7 +46,7 @@ class SoftwareUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(doc docx pdf txt rar zip jpg jpeg png gif)
+    #%w(doc docx pdf txt rar zip jpg jpeg png gif)
   end
 
   # Override the filename of the uploaded files:

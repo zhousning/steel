@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170912090442) do
     t.string   "main_image",   default: "", null: false
     t.string   "preview_link", default: "", null: false
     t.string   "source_link",  default: "", null: false
-    t.text     "tag",          default: "", null: false
+    t.text     "tag"
     t.integer  "category_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170912090442) do
     t.string   "name",        default: "", null: false
     t.string   "file",        default: "", null: false
     t.string   "description", default: "", null: false
-    t.text     "install",     default: "", null: false
+    t.text     "install"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
