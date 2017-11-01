@@ -1,12 +1,17 @@
 %nav.navbar.home-navbar-wrapper
   .container
     .navbar-header
-      = link_to Setting.home.site_title, root_path, :class => "navbar-brand"
+      = link_to root_path, :class => "navbar-brand padding-0" do
+        =image_tag "logo.png"
     %ul.nav.navbar-nav
       %li
         = link_to Setting.home.site_theme, site_themes_path
       %li
         = link_to Setting.home.develop_tool, softwares_path
+      %li
+        = link_to Setting.home.study, root_path
+      %li
+        = link_to Setting.home.outsource, root_path
       - if user_signed_in? && current_user.role == Setting.users.role_admin
         %li
           = link_to "管理", manages_path

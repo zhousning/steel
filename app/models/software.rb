@@ -12,5 +12,4 @@
 #
 
 class Software < ActiveRecord::Base
-  mount_uploader :file, SoftwareUploader
 end

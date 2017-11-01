@@ -16,7 +16,7 @@ class SiteThemesController < ApplicationController
       ship.each do |s|
         ids << s.site_theme_id
       end
-      @site_themes = SiteTheme.where(:id => ids).page(params[:page]).per(4)
+      @site_themes = SiteTheme.where(:id => ids).page(params[:page]).per(Setting.site_themes.max_page)
       tags.each do |tag|
         @page_title += tag.name + "_"
       end
