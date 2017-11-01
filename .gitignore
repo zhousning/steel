@@ -16,8 +16,9 @@
 !/log/.keep
 /tmp
 
-#Ignore software and csstheme folder
-public/softwares/
-public/cssthemes/
+#Ignore public 
+/public/assets/
+/public/softwares/
+/public/cssthemes/
 
 .rake_tasks~
