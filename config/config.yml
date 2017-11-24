@@ -8,7 +8,8 @@ defaults: &defaults
     site_theme: "主题街"
     develop_tool: "软件街"
     study: "问答街"
-    outsource: "开发街" 
+    outsource: "外包街" 
+    tutorial: "教程街"
   site_themes:
     max_page: 15
 

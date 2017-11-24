@@ -24,11 +24,14 @@
             %li
               = link_to Setting.home.site_theme, root_path
             %li
-              = link_to Setting.home.develop_tool, root_path
+              = link_to Setting.home.develop_tool, "http://www.gitdebug.com", :target => "_blank"
+            -#
+              %li
+                = link_to Setting.home.study, root_path
+              %li
+                = link_to Setting.home.outsource, root_path
             %li
-              = link_to Setting.home.study, root_path
-            %li
-              = link_to Setting.home.outsource, root_path
+              = link_to Setting.home.tutorial, "https://shop527029490.taobao.com", :target => "_blank"
         .col-md-3.col-sm-6.paddingtop-bottom
           %h6.heading7
           .post
@@ -57,4 +60,4 @@
     .container
       .col-md-12
         %p 
-          &#xA9; 2016 - All Rights with bafangjie 
+          &#xA9; 2018 - All Rights with bafangjie 鲁ICP备17050710号
