@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-4
+      .form-group
+        = text_area_tag "nlp-post"
+        %button{:id=>"nlp-analyze", :class=>"btn btn-primary btn-lg", :type=>"button"}
+          开始分析
+    .col-md-4
+      .nlp-word-frequency

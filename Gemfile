@@ -44,7 +44,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.3.13'
+  #gem 'mysql2', '~> 0.3.13'
 end
 
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -67,7 +67,9 @@ gem 'rails_kindeditor'
 #gem 'sidekiq'
 #gem 'sinatra', :require => nil
 
-#gem 'rest-client'
+gem 'rest-client'
+
+gem 'json'
 
 gem 'gon'
 

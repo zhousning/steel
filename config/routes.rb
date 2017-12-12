@@ -23,6 +23,12 @@ Rails.application.routes.draw do
   end
 
   resources :manages, only: [:index]
+
+  resources :nlps do
+    collection do
+      get 'analyze'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
