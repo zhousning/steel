@@ -5,7 +5,7 @@ $(".nlps.index").ready(function() {
       var items = data.word_count;
       var result = "";
       for (var i=0; i<items.length; i++) {
-        result += items[i][0] + items[i][1]; 
+        result += "<tr><td>" + items[i][0] +"</td><td>" + items[i][1] + "</td></tr>"; 
       }
       $(".nlp-word-frequency").html(result);
     });
