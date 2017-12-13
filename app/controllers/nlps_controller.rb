@@ -8,9 +8,15 @@ class NlpsController < ApplicationController
   def analyze 
     posts = '{"text" : "' + params[:text] + '"}'
     nlp_result = posts_process(posts)
-    word_hash = word_frequency(nlp_result)
-    respond_to do |f|
-      f.json { render :json => {word_count: word_hash}.to_json}
+    unless nlp_result["error_code"]
+      word_hash = word_frequency(nlp_result)
+      respond_to do |f|
+        f.json { render :json => {word_count: word_hash}.to_json}
+      end
+    else
+      respond_to do |f|
+        f.json { render :json => {word_count: [[nlp_result["error_code"], nlp_result["error_msg"]]]}.to_json}
+      end
     end
   end 
 
@@ -20,6 +26,7 @@ class NlpsController < ApplicationController
       posts.encode! "GBK", "UTF-8"
       res = RestClient.post url, posts, :content_type => "application/json", :accept => :json
       res.encode! "UTF-8", "GBK"
+      puts res
       res = JSON.parse(res.body) 
     end
 

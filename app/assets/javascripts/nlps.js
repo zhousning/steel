@@ -1,7 +1,8 @@
 $(".nlps.index").ready(function() {
   $("#nlp-analyze").click(function() {
     var texts = $.trim($("#nlp-post").val());
-    $.getJSON("/nlps/analyze", { text: texts}, function(data){
+    texts = texts.replace(/[\s"]/g, "");
+    $.post("/nlps/analyze", { text: texts}, function(data){
       var items = data.word_count;
       var result = "";
       for (var i=0; i<items.length; i++) {

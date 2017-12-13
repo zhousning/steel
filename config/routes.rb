@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :nlps do
     collection do
-      get 'analyze'
+      post 'analyze'
     end
   end
   # Example of regular route:
