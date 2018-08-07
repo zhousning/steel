@@ -1,0 +1,23 @@
+- provide(:title, t('.title'))
+
+.container
+  .col-md-8
+    .panel.panel-primary
+      %button{:type => "button", :class => "btn btn-primary", :id =>"keywords-rank"}
+        查询排名
+      .panel-heading
+      .panel-body
+        %table.table.table-bordered
+          %thead
+            %th.col-md-4
+              关键词
+            %th.col-md-4
+              直通车排名
+            -#
+              %th.col-md-3
+                综合排序排名
+              %th.col-md-3
+                右侧掌柜热卖排名
+              %th.col-md-3
+                底部掌柜热卖排名
+          %tbody#ranks-ctn

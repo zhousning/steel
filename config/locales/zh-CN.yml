@@ -55,3 +55,6 @@ zh-CN:
   manages:
     index:
       title: "管理面板"
+  trains:
+    index:
+      title: "直通车排名"

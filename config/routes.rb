@@ -29,6 +29,12 @@ Rails.application.routes.draw do
       post 'analyze'
     end
   end
+
+  resources :trains do
+    collection do
+      get 'get_ranks'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

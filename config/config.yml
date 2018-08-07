@@ -12,6 +12,8 @@ defaults: &defaults
     tutorial: "教程街"
   site_themes:
     max_page: 15
+  shops:
+    my_shop: "梦寐家纺工厂店"
 
 development:
   <<: *defaults
