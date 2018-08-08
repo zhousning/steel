@@ -7,7 +7,7 @@
 #  main_image   :string           default(""), not null
 #  preview_link :string           default(""), not null
 #  source_link  :string           default(""), not null
-#  tag          :text             default(""), not null
+#  tag          :text
 #  category_id  :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
