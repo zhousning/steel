@@ -35,6 +35,12 @@ Rails.application.routes.draw do
       get 'get_ranks'
     end
   end
+  
+  resources :wx_users, only: [:create] do
+    collection do
+      get 'get_userid'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
