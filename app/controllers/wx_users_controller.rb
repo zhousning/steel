@@ -2,6 +2,8 @@ require 'restclient'
 require 'json'
 
 class WxUsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     target = WxUser.find_by(:openid => params[:openid])
     unless target
@@ -27,14 +29,18 @@ class WxUsersController < ApplicationController
       unless body["errcode"]
         openid = body["openid"]
         session_key = body["session_key"]
+        respond_to do |f|
+          f.json { render :json => {
+            :openid => openid
+          }.to_json }
+        end
       else
-        puts body["errmsg"]
+        respond_to do |f|
+          f.json { render :json => {
+            :openid => "error" 
+          }.to_json }
+        end
       end
-    end
-    respond_to do |f|
-      f.json { render :json => {
-        :openid => openid
-      }.to_json }
     end
   end
 

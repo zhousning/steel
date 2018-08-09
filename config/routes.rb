@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   
   resources :wx_users, only: [:create] do
     collection do
-      get 'get_userid'
+      post 'get_userid'
     end
   end
   # Example of regular route:
