@@ -7,12 +7,27 @@ class WxUsersController < ApplicationController
   def create
     target = WxUser.find_by(:openid => params[:openid])
     unless target
+      wxuser = WxUser.new(wx_user_params)
       score = Score.new
-      wxuser = WxUser.new(wx_user_params, :score => score)
+      wxuser.score = score
       if wxuser.save
-        puts "#{wxuser.nickname} save success"
+        respond_to do |f|
+          f.json {
+            render :json => {:wxuser_status => 'success'}.to_json
+          }
+        end
       else
-        puts "#{wxuser.nickname} save error"
+        respond_to do |f|
+          f.json {
+            render :json => {:wxuser_status => 'fail'}.to_json
+          }
+        end
+      end
+    else
+      respond_to do |f|
+        f.json {
+          render :json => {:wxuser_status => 'already exist'}.to_json
+        }
       end
     end
   end
@@ -22,22 +37,23 @@ class WxUsersController < ApplicationController
     iv = params[:iv]
     appid = "wxfa7abc0845745fb8"
     secret = "45dd3af7aeffcaa06450ec8dd2e24f52"
-    code = params[:code]
+    code = params[:code].to_s
     url = "https://api.weixin.qq.com/sns/jscode2session?appid=#{appid}&secret=#{secret}&js_code=#{code}&grant_type=authorization_code"
     RestClient.get url do |response|
       body = JSON.parse(response.body)
+      puts body
       unless body["errcode"]
         openid = body["openid"]
         session_key = body["session_key"]
         respond_to do |f|
           f.json { render :json => {
-            :openid => openid
+            :openId => openid
           }.to_json }
         end
       else
         respond_to do |f|
           f.json { render :json => {
-            :openid => "error" 
+            :openId => nil 
           }.to_json }
         end
       end

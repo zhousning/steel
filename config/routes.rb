@@ -41,6 +41,12 @@ Rails.application.routes.draw do
       post 'get_userid'
     end
   end
+  
+  resources :scores, only: [] do
+    collection do
+      get 'top_one_hundred'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
