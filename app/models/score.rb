@@ -12,4 +12,8 @@
 
 class Score < ActiveRecord::Base
   belongs_to :wx_user
+
+  def add_score(score)
+    self.update_attribute :mark, (self.mark + score.to_i)
+  end
 end
