@@ -35,27 +35,28 @@ class WxUsersController < ApplicationController
   def get_userid
     encryptedData = params[:encryptedData]
     iv = params[:iv]
-    appid = "wxfa7abc0845745fb8"
-    secret = "45dd3af7aeffcaa06450ec8dd2e24f52"
-    code = params[:code].to_s
-    url = "https://api.weixin.qq.com/sns/jscode2session?appid=#{appid}&secret=#{secret}&js_code=#{code}&grant_type=authorization_code"
-    RestClient.get url do |response|
-      body = JSON.parse(response.body)
-      puts body
-      unless body["errcode"]
-        openid = body["openid"]
-        session_key = body["session_key"]
-        respond_to do |f|
-          f.json { render :json => {
-            :openId => openid
-          }.to_json }
-        end
-      else
-        respond_to do |f|
-          f.json { render :json => {
-            :openId => nil 
-          }.to_json }
-        end
+    url = "https://api.weixin.qq.com/sns/jscode2session"
+    data = {
+      appid: "wxfa7abc0845745fb8", 
+      secret: "45dd3af7aeffcaa06450ec8dd2e24f52",
+      js_code: params[:code].to_s,
+      grant_type: 'authorization_code'
+    }
+    response = RestClient.get url, params: data, :accept => :json
+    body = JSON.parse(response.body)
+    unless body["errcode"]
+      openid = body["openid"]
+      session_key = body["session_key"]
+      respond_to do |f|
+        f.json { render :json => {
+          :openId => openid
+        }.to_json }
+      end
+    else
+      respond_to do |f|
+        f.json { render :json => {
+          :openId => body 
+        }.to_json }
       end
     end
   end

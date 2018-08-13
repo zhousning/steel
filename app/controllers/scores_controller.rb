@@ -7,7 +7,7 @@ class ScoresController < ApplicationController
     score = params[:score]
     openid = params[:openid]
     wxuser = WxUser.find_by(:openid => openid)
-    if wxuser.score.add_score(score)
+    if wxuser and wxuser.score.add_score(score)
       respond_to do |f|
         f.json {
           render :json => {
