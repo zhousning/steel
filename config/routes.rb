@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :wx_users, only: [:create] do
+  resources :wx_users, only: [:update] do
     collection do
       post 'get_userid'
     end

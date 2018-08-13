@@ -4,30 +4,13 @@ require 'json'
 class WxUsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def create
-    target = WxUser.find_by(:openid => params[:openid])
-    unless target
-      wxuser = WxUser.new(wx_user_params)
-      score = Score.new
-      wxuser.score = score
-      if wxuser.save
-        respond_to do |f|
-          f.json {
-            render :json => {:wxuser_status => 'success'}.to_json
-          }
-        end
+  def update 
+    wxuser = WxUser.find_by(:openid => params[:id])
+    respond_to do |f|
+      if wxuser.update(wx_user_params)
+        f.json { render :json => {:status => "wxuser update success" }.to_json}
       else
-        respond_to do |f|
-          f.json {
-            render :json => {:wxuser_status => 'fail'}.to_json
-          }
-        end
-      end
-    else
-      respond_to do |f|
-        f.json {
-          render :json => {:wxuser_status => 'already exist'}.to_json
-        }
+        f.json { render :json => {:status => "wxuser update error"}.to_json}
       end
     end
   end
@@ -47,22 +30,27 @@ class WxUsersController < ApplicationController
     unless body["errcode"]
       openid = body["openid"]
       session_key = body["session_key"]
+
+      target = WxUser.find_by(:openid => openid)
+      unless target
+        wxuser = WxUser.new(:openid => openid)
+        score = Score.new
+        wxuser.score = score
+        wxuser.save
+      end
+
       respond_to do |f|
-        f.json { render :json => {
-          :openId => openid
-        }.to_json }
+        f.json { render :json => { :openId => openid }.to_json }
       end
     else
       respond_to do |f|
-        f.json { render :json => {
-          :openId => body 
-        }.to_json }
+        f.json { render :json => { :openId => body }.to_json }
       end
     end
   end
 
   private
     def wx_user_params
-      params.require(:wx_user).permit(:openid, :nickname, :avatarurl, :gender, :city, :province, :country, :language)
+      params.require(:wx_user).permit(:nickname, :avatarurl, :gender, :city, :province, :country, :language)
     end                                  
 end
