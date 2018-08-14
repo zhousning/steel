@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   resources :scores, only: [] do
     collection do
       get 'top_one_hundred'
+      get 'get_rank'
       post 'add_score'
     end
   end
