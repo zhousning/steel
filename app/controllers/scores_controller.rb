@@ -29,25 +29,24 @@ class ScoresController < ApplicationController
   end
 
   def top_one_hundred
-    scores = Score.limit(100).order('mark desc').all
+    scores = Score.limit(100).order('score desc').all
     result = []
     scores.each do |score|
       hash = Hash.new
       hash["nickname"] = score.wx_user.nickname
       hash["avatarurl"] = score.wx_user.avatarurl
-      hash["mark"] = score.mark
+      hash["mark"] = score.score
       hash["rank"] = score.rank
       result << hash
     end
 
     openid = params[:openid]
     wxuser = WxUser.find_by(:openid => openid)
-    myscore = wxuser.score.mark
+    myscore = wxuser.score.score
     myrank = wxuser.score.rank
 
     respond_to do |f|
       f.json { render :json => { myscore: myscore, myrank: myrank, scores: result }.to_json }
     end
   end
-  
 end

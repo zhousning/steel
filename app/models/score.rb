@@ -15,11 +15,16 @@ class Score < ActiveRecord::Base
   belongs_to :wx_user
 
   def add_score(mark, rank, step)
-    score = self.score
-    if mark > self.mark
-      score = (rank-1)*step + mark 
+    if rank != self.rank
+      score = (rank-1)*step
+      mark = 0
     else
-      mark = self.mark
+      if mark > self.mark
+        score = (rank-1)*step + mark 
+      else
+        score = self.score
+        mark = self.mark
+      end
     end
     self.update_attributes(:mark => mark, :score => score, :rank => rank)
   end
